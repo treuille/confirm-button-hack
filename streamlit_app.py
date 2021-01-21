@@ -52,7 +52,7 @@ def cache_on_button_press(label, **cache_kwargs):
                 if st.button(label):
                     cache_entry.evaluate()
                 else:
-                    raise st.ScriptRunner.StopException
+                    st.stop()
             return cache_entry.return_value
         return wrapped_func
     return function_decorator
